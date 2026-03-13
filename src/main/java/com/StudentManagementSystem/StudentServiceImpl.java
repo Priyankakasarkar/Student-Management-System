@@ -19,6 +19,14 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> searchStudentsByName(String keyword) {
+        if (keyword == null || keyword.isBlank()) {
+            return getAllStudents();
+        }
+        return studentRepository.findByNameContainingIgnoreCase(keyword);
+    }
+
+    @Override
     public Student saveStudent(Student student) {
         return studentRepository.save(student);
     }

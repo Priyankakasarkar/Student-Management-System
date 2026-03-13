@@ -7,6 +7,8 @@ public interface StudentService {
 
     List<Student> getAllStudents();
 
+    List<Student> searchStudentsByName(String keyword);
+
     Student saveStudent(Student student);
 
     Student getStudentById(Long id);

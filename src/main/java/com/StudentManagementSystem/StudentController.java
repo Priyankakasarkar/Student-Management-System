@@ -15,8 +15,10 @@ public class StudentController {
 
     // Display list
     @GetMapping("/")
-    public String viewHomePage(Model model) {
-        model.addAttribute("students", studentService.getAllStudents());
+    public String viewHomePage(@RequestParam(value = "keyword", required = false) String keyword,
+                               Model model) {
+        model.addAttribute("students", studentService.searchStudentsByName(keyword));
+        model.addAttribute("keyword", keyword);
         return "index";
     }
 

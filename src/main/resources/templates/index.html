@@ -21,6 +21,12 @@
 
             <div class="d-flex justify-content-between mb-3">
                 <h5>Student List</h5>
+                <form class="d-flex" th:action="@{/}" method="get">
+                    <input type="text" name="keyword" class="form-control me-2" placeholder="Search by name"
+                           th:value="${keyword}">
+                    <button class="btn btn-primary me-2" type="submit">Search</button>
+                    <a th:href="@{/}" class="btn btn-secondary">Reset</a>
+                </form>
                 <a th:href="@{/showNewStudentForm}" class="btn btn-success">+ Add Student</a>
             </div>
 
@@ -36,8 +42,8 @@
                 </thead>
 
                 <tbody>
-              <tr th:each="student : ${students}">
-                    <td th:text="${student.id}"></td>
+              <tr th:each="student, iterStat : ${students}">
+                    <td th:text="${iterStat.index + 1}"></td>
                     <td th:text="${student.name}"></td>
                     <td th:text="${student.email}"></td>
                     <td th:text="${student.course}"></td>
