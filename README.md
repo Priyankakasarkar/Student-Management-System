@@ -93,14 +93,8 @@ src/
 - MySQL community
 - Open source community
 
-## 🚀 Host with GitHub + Render
 
-1. Push this project to GitHub (`git push origin main`).
-2. Create a Render web service, connect to your GitHub repo.
-3. Use build command: `./mvnw clean package -DskipTests`.
-4. Use start command: `java -jar target/*.jar`.
 
-Your app will be live on a Render URL.
 
 ---
 
